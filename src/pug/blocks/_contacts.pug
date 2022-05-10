@@ -1,0 +1,44 @@
+.contacts   
+  .container
+    .contacts__inner
+      .contacts__social 
+        h3.contacts__title Контакты
+        ul.contacts__list 
+          li.contacts__item
+            a.contacts__link(href="#")
+              img(src="./img/telegram.svg", alt="social link to telegram")
+              | Telegram
+          li.contacts__item
+            a.contacts__link(href="#")
+              img(src="./img/vk.svg", alt="social link to vk")
+              | Вконтакте
+          li.contacts__item
+            a.contacts__link(href="#")
+              img(src="./img/whatsapp.svg", alt="social link to whatsapp")
+              | WhatsApp
+          li.contacts__item
+            a.contacts__link(href="#")
+              img(src="./img/behance.svg", alt="social link to behance")
+              | Behance
+          li.contacts__item
+            a.contacts__link(href="#")
+              img(src="./img/skype.svg", alt="social link to skype")
+              | Skype
+      .contacts__questions 
+        h3.contacts__title Есть вопрос или предложение?
+        form.contacts__form
+          .contacts__row 
+            .contacts__input.contacts__input--theme 
+              input(type="text" placeholder="Тема сообщения")
+            .contacts__input.contacts__input--name 
+              input(type="text" placeholder="Имя")
+            .contacts__input.contacts__input--email 
+              input(type="email" placeholder="E-mail")
+          .contacts__row
+            .contacts__textarea 
+              <textarea placeholder="Сообщение"></textarea>
+          .contacts__row 
+            button.contacts__btn.btn(type="submit") Отправить
+            .contacts__police Нажимая “Отправить” вы cоглашаетесь #[a(href="#") с политикой конфиденциальности] сайта Crable.ru
+
+

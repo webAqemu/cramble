@@ -1,0 +1,8 @@
+mixin breadcrumbs(arr,cur)
+    ul.breadcrumbs
+        each link in arr
+            li.breadcrumbs__item
+                a(href="#").breadcrumbs__link=link
+        if cur != ''
+            li.breadcrumbs__item
+                span.breadcrumbs__text=cur

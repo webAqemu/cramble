@@ -1,0 +1,75 @@
+.login.popup.active
+  .popup__title Вход
+  button.popup__close
+  ul.popup__social 
+    li 
+      a(href="#") 
+        include ../../img/vk.svg
+    li 
+      a(href="#") 
+        include ../../img/telegram.svg
+    li 
+      a(href="#") 
+        include ../../img/yandex.svg
+    li 
+      a(href="#") 
+        include ../../img/google.svg
+    li 
+      a(href="#") 
+        include ../../img/mail.svg
+
+  .popup__or или
+
+  form.popup__form(action="#")
+    .popup__input
+      input(type="text" placeholder="E-mail") 
+    .popup__input
+      input(type="text" placeholder="Пароль") 
+    button.popup__btn(type="submit") войти
+    
+  .popup__checkbox 
+    input(type="checkbox" name="conditions" checked)
+    label(for="conditions") Соглашаюсь с условиями использования сервиса и политикой конфиденциальности
+
+  button.popup__link(data-popup="reg") Зарегистрироваться
+  button.popup__link Забыли пароль?
+
+.reg.popup
+  .popup__title Регистрация
+  button.popup__close
+  ul.popup__social 
+    li 
+      a(href="#") 
+        include ../../img/vk.svg
+    li 
+      a(href="#") 
+        include ../../img/telegram.svg
+    li 
+      a(href="#") 
+        include ../../img/yandex.svg
+    li 
+      a(href="#") 
+        include ../../img/google.svg
+    li 
+      a(href="#") 
+        include ../../img/mail.svg
+
+  .popup__or или
+
+  form.popup__form(action="#")
+    .popup__input
+      input(type="text" placeholder="E-mail") 
+    .popup__input.error
+      input(type="text" placeholder="E-mail")
+      .msg Прописные и строчные буквы, цифры
+    .popup__input.success
+      input(type="text" placeholder="E-mail") 
+    .popup__input
+      input(type="text" placeholder="Пароль") 
+    button.popup__btn(type="submit") зарегистрироваться
+    
+  .popup__checkbox 
+    input(type="checkbox" name="conditions" checked)
+    label(for="conditions") Соглашаюсь с условиями использования сервиса и политикой конфиденциальности
+
+  button.popup__link(data-popup="login") У меня уже есть аккаунт

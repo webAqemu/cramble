@@ -1,0 +1,355 @@
+.header
+    position: relative
+    border-bottom: 1px solid $grey
+    z-index: 9999
+
+    &.active
+        .header__nav
+            transform: translateY(1px)
+            pointer-events: inherit
+
+            @include r(650px)
+                transform: translateX(0)
+
+            &::after
+                opacity: 1
+
+    &__inner
+        display: flex
+        align-items: center
+
+    &__burger
+        display: none
+        align-items: center
+        justify-content: center
+        position: relative
+        z-index: 4
+        width: 30px
+        height: 30px
+        padding: 8px 5px
+        margin-right: 25px
+        margin-left: -5px
+
+        &::before,
+        &::after
+            content: ""
+            position: absolute
+            left: 5px
+            width: 20px
+            height: 2px
+            background-color: $red
+            transition: transform 0.3s, top 0.3s, bottom 0.3s
+
+        &::before
+            top: 8px
+
+        &::after
+            bottom: 8px
+
+        &.active
+            &::before
+                transform: rotate(45deg)
+                top: 14px
+
+            &::after
+                bottom: 14px
+                transform: rotate(-45deg)
+            .line
+                opacity: 0
+
+        @include r(1200px)
+            display: flex
+
+        @include r(650px)
+            margin-right: 20px
+
+        .line
+            width: 20px
+            height: 2px
+            background-color: $red
+            transition: opacity 0.3s
+
+    &__logo
+        display: flex
+        min-width: 140px
+        width: 140px
+        margin-right: 25px
+
+        @include r(650px)
+            align-items: center
+            justify-content: center
+            width: 100%
+            padding: 15px 10px
+            margin-right: 20px
+            border-left: 1px solid $grey
+            border-right: 1px solid $grey
+
+        img
+            width: 100%
+
+            @include r(650px)
+                width: 140px
+
+    &__nav
+        margin-right: 60px
+
+        @include r(1200px)
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 3
+            width: 100%
+            height: 100%
+            background-color: #fff
+            padding-left: 80px
+            transform: translateY(-100%)
+            pointer-events: none
+            transition: transform 0.3s
+
+            &::after
+                content: ""
+                position: absolute
+                left: 0
+                top: 100%
+                width: 100%
+                height: 80px
+                background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 6.78%, rgba(0, 0, 0, 0) 100%)
+                opacity: 0
+                pointer-events: none
+                transition: opacity 0.3s
+
+        @include r(768px)
+            display: flex
+            align-items: center
+
+        @include r(650px)
+            flex-direction: column
+            align-items: flex-start
+            height: 100vh
+            padding: 60px 20px 0
+            transform: translateX(-100%)
+
+        ul
+            display: flex
+            align-items: center
+            position: relative
+            z-index: 2
+
+            @include r(768px)
+                margin-right: auto
+
+            @include r(650px)
+                flex-direction: column
+                align-items: flex-start
+                font-size: 14px
+                margin-bottom: 20px
+
+        li:not(:last-child)
+            margin-right: 20px
+
+            @include r(650px)
+                margin: 0
+
+        a
+            display: inline-block
+            padding: 39px 10px
+            margin-bottom: -1px
+            border-bottom: 2px solid $transparent
+            white-space: nowrap
+            transition: border-color 0.5s
+
+            @include r(1200px)
+                padding: 29px 10px
+
+            @include r(650px)
+                padding: 6px 0
+
+            &:hover
+                border-color: $red
+
+    &__search
+        position: relative
+        width: 100%
+        margin-right: 50px
+        border-left: 1px solid $grey
+        border-right: 1px solid $grey
+
+        @include r(1200px)
+            margin-right: 30px
+
+        @include r(650px)
+            border: none
+            position: static
+            margin-right: 0
+            min-width: 20px
+            width: 20px
+
+            &.active
+                input
+                    bottom: 0
+
+        button
+            position: absolute
+            left: 35px
+            top: 50%
+            transform: translateY(-50%)
+            width: 28px
+            height: 28px
+            background-image: url(../img/search.svg)
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+
+            @include r(1200px)
+                width: 20px
+                height: 20px
+                left: 15px
+
+            @include r(650px)
+                display: flex
+                position: relative
+                left: auto
+                top: auto
+                transform: none
+
+        input
+            font: inherit
+            width: 100%
+            padding: 40px 50px 40px 80px
+            border: none
+            outline: none
+            background-color: #fff
+
+            @include r(1200px)
+                padding: 30px 50px
+
+            @include r(650px)
+                position: absolute
+                z-index: 2
+                left: 66px
+                bottom: 100%
+                width: calc(100% - 132px)
+                height: 100%
+                font-size: 14px
+                transition: bottom 0.3s
+
+    &__options
+        position: absolute
+        left: 0
+        top: calc(100% + 1px)
+        width: 100%
+        padding: 30px 35px
+        border: 1px solid $grey
+        border-top: none
+        opacity: 0
+        pointer-events: none
+        transition: opacity 0.3s
+
+        &.active
+            opacity: 1
+            pointer-events: inherit
+
+        .option
+            cursor: pointer
+            transition: color 0.3s
+
+            &:not(:last-child)
+                margin-bottom: 20px
+
+            &:hover
+                color: $red
+
+    &__knowledgebase
+        margin-right: 50px
+        white-space: nowrap
+        padding: 39px 10px
+        margin-bottom: -1px
+        border-bottom: 2px solid $transparent
+        white-space: nowrap
+        transition: border-color 0.5s
+
+        @include r(1200px)
+            display: none
+
+        &:hover
+            border-color: $red
+
+    &__login
+        position: relative
+        padding: 18px 35px 15px 55px
+        font-size: 12px
+        font-weight: 700
+        border: 1px solid #CDD6E9
+        border-radius: 5px
+        margin-right: 10px
+        transition: color 0.3s, background-color 0.3s, border-color 0.3s
+
+        @include r(768px)
+            margin-right: 0
+
+        @include r(650px)
+            display: none
+
+            &.max-650
+                padding: 15px 35px 15px 35px
+                border: none
+                margin-bottom: 30px
+
+        &::before
+            content: ""
+            position: absolute
+            left: 20px
+            top: 50%
+            transform: translateY(-50%)
+            width: 18px
+            height: 18px
+            background-image: url(../img/user-violent.svg)
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            transition: background-image 0.3s
+
+            @include r(650px)
+                left: 0
+
+        &:hover
+            color: $blue
+            background-color: #F5F6FA
+            border-color: #F5F6FA
+
+            &::before
+                background-image: url(../img/user-blue.svg)
+
+        &:active
+            background-color: #D8DBE5
+            border-color: #D8DBE5
+
+    &__social
+        display: flex
+
+        @include r(768px)
+            display: none
+            margin-right: 30px
+
+        a
+            display: block
+            min-width: 48px
+            width: 48px
+            height: 48px
+            border: 1px solid $grey
+            border-radius: 5px
+            background-repeat: no-repeat
+            background-position: center
+            padding: 0
+            transition: background-color 0.3s, border-color 0.3s
+
+            &:not(:last-child)
+                margin-right: 10px
+
+            &:hover
+                background-color: #F5F6FA
+                border-color: #F5F6FA
+
+            &:active
+                background-color: #D8DBE5
+                border-color: #D8DBE5

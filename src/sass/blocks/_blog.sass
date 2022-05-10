@@ -1,0 +1,244 @@
+.blog
+  position: relative
+  background-color: rgba($lgrey, 0.7)
+  padding: 15px 0 140px 70px
+
+  @include r(1200px)
+    padding-bottom: 115px
+
+  @include r(768px)
+    padding-left: 0
+    padding-top: 0
+
+  @include r(650px)
+    padding-bottom: 70px
+
+  .breadcrumbs
+    margin-bottom: 20px
+
+    @include r(768px)
+      margin-top: 15px
+
+  &__title
+    font-weight: 700
+    font-size: 36px
+    margin-bottom: 50px
+
+    @include r(768px)
+      text-align: center
+      font-size: 30px
+      margin-bottom: 40px
+
+    @include r(650px)
+      font-size: 20px
+      margin-bottom: 30px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
+    width: calc(100% + 30px)
+    margin: 0 -15px 145px
+
+    @include r(1200px)
+      margin-bottom: 90px
+
+    @include r(650px)
+      margin-bottom: 40px
+
+  &__link
+    position: relative
+    display: block
+
+  &__item
+    width: 25%
+    margin-bottom: 70px
+    padding: 0 15px
+
+    @include r(1200px)
+      width: 50%
+      margin-bottom: 30px
+
+    @include r(650px)
+      width: 100%
+      margin-bottom: 20px
+
+    &:hover .blog__desc
+      color: $blue
+
+    &--lg
+      width: 50%
+
+      @include r(650px)
+        width: 100%
+
+      .blog__link::before
+        content: ""
+        position: absolute
+        left: 5px
+        top: 375px
+        width: 13px
+        height: 14px
+        background-image: url(../img/flag--blue.svg)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+
+        @include r(1200px)
+          top: 253px
+
+        @include r(768px)
+          top: 180px
+
+      .blog__img
+        height: 355px
+
+        @include r(1200px)
+          height: 235px
+
+        @include r(768px)
+          height: 165px
+
+      .blog__desc
+        font-size: 20px
+        padding-left: 30px
+
+        @include r(1200px)
+          font-size: 16px
+
+        @include r(768px)
+          font-size: 14px
+
+      .blog__wrapper
+        padding-left: 30px
+
+  &__img
+    height: 235px
+    border-radius: 10px
+    background-color: $dgrey
+    margin-bottom: 15px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+    @include r(768px)
+      height: 165px
+
+  &__desc
+    font-weight: 600
+    padding: 0 8px
+    margin-bottom: 10px
+    transition: color 0.3s
+
+    @include r(768px)
+      font-size: 14px
+
+  &__wrapper
+    display: flex
+    align-items: center
+    padding: 0 8px
+
+  &__date
+    font-family: 'OpenSans', sans-serif
+    font-weight: 400
+    font-size: 14px
+    white-space: nowrap
+    color: #92A2B2
+    margin-right: 40px
+
+    @include r(650px)
+      font-size: 12px
+
+  &__comments,
+  &__likes
+    position: relative
+    font-family: 'OpenSans', sans-serif
+    font-weight: 600
+    font-size: 12px
+    line-height: 1
+    padding-left: 30px
+    color: #A2A8BB
+    margin-right: 20px
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 30%
+      transform: translateY(-50%)
+      width: 20px
+      height: 17px
+      background-image: url(../img/comment.svg)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+
+  &__likes
+    margin-right: 0
+    padding-left: 23px
+
+    &::before
+      width: 16px
+      height: 15px
+      background-image: url(../img/like.svg)
+
+  &__pagination
+    font-family: 'OpenSans', sans-serif
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__arrow
+    position: relative
+    min-width: 50px
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    border: 1px solid $grey
+    background-color: $transparent
+    cursor: pointer
+
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 12px
+      height: 12px
+      border-right: 2px solid $main
+      border-bottom: 2px solid $main
+      transform: translate(-65%, -50%) rotate(-45deg)
+      transition: border-color 0.3s
+
+    &:hover::after
+      border-color: $red
+
+    &--disabled
+      opacity: 0.5
+      pointer-events: none
+
+    &--prev
+      transform: rotate(180deg)
+
+  &__pages
+    display: flex
+    margin: 0 25px
+
+    @include r(650px)
+      font-size: 12px
+      margin: 0 15px
+
+    li
+
+      &:not(:last-child)
+        margin-right: 15px
+
+      &.active
+        border-bottom: 2px solid $red
+
+      a
+        padding: 15px 4px
+        transition: color 0.3s
+
+        &:hover
+          color: $red

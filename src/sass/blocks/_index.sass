@@ -1,0 +1,797 @@
+.preview
+  padding-top: 65px
+  margin-bottom: 75px
+
+  @include r(768px)
+    padding-top: 40px
+
+  @include r(650px)
+    margin-bottom: 50px
+
+  &__subtitle
+    font-size: 40px
+    font-weight: 400
+    color: $red
+    margin: 0 0 30px
+
+    @include r(768px)
+      font-size: 30px
+      margin-bottom: 20px
+
+    @include r(650px)
+      font-size: 18px
+      margin-bottom: 10px
+
+  &__title
+    max-width: 800px
+    font-size: 48px
+    font-weight: 700
+    margin-bottom: 50px
+
+    @include r(768px)
+      font-size: 36px
+      margin-bottom: 40px
+
+    @include r(650px)
+      font-size: 24px
+      margin-bottom: 20px
+
+    span
+      font-weight: 400
+
+  &__wrapper
+    @include r(650px)
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+  &__link
+    margin-bottom: 10px
+
+    &:not(:last-child)
+      margin-right: 10px
+
+      @include r(650px)
+        margin-right: 0
+
+.projects
+  margin-bottom: 145px
+
+  @include r(1000px)
+    margin-bottom: 95px
+
+  @include r(768px)
+    margin-bottom: 85px
+
+  @include r(650px)
+    margin-bottom: 60px
+
+  .container
+    position: relative
+
+  &__more
+    position: absolute
+    top: 0
+    right: 30px
+    white-space: nowrap
+
+    @include r(650px)
+      position: relative
+      top: auto
+      right: auto
+      display: block
+      width: fit-content
+      margin: 0 auto
+
+  &__slider
+    position: relative
+    overflow-x: hidden
+
+    @include r(768px)
+      width: calc(100% - 60px)
+      overflow: visible
+
+    @include r(650px)
+      margin-bottom: 20px
+      width: calc(100% - 30px)
+      margin-left: -20px
+
+  .slider__arrow--next
+    @include r(768px)
+      right: -60px
+
+    @include r(650px)
+      right: -70px
+
+  &__item
+    position: relative
+    height: 570px
+    display: flex
+    align-items: flex-end
+    padding: 30px
+
+    @include r(768px)
+      height: 400px
+
+    @include r(650px)
+      height: 350px
+
+    &--dark
+      color: white
+
+      .projects__img.empty
+        background-color: $dgrey
+
+  &__img
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+    &.empty
+      background-color: $lgrey
+
+  &__desc
+    position: relative
+    font-size: 18px
+    font-weight: 600
+
+    @include r(768px)
+      font-size: 14px
+
+  &__pagination
+    margin-top: 28px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @include r(768px)
+      padding-left: 60px
+
+    @include r(650px)
+      margin-top: 12px
+
+  &__dot
+    display: block
+    width: 7px
+    height: 4px
+    background-color: rgba(108, 123, 136, 0.3)
+    border-radius: 10px
+    transition: background-color 0.3s, width 0.3s
+
+    &:not(:last-child)
+      margin-right: 3px
+
+    &--active
+      background-color: $dgrey
+      width: 23px
+
+.knowledge
+  margin-bottom: 145px
+
+  @include r(1000px)
+    margin-bottom: 60px
+
+  @include r(650px)
+    margin-bottom: 110px
+
+  .container
+    position: relative
+
+  .section-title
+    margin-bottom: 75px
+
+    @include r(768px)
+      margin-bottom: 35px
+
+    @include r(650px)
+      margin-bottom: 30px
+
+  &__more
+    position: absolute
+    top: 0
+    right: 30px
+    white-space: nowrap
+
+    @include r(650px)
+      position: relative
+      top: auto
+      right: auto
+      display: block
+      width: fit-content
+      margin: 0 auto
+
+  &__slider
+    position: relative
+    overflow: hidden
+
+    @include r(1200px)
+      width: calc(100% - 60px)
+      overflow: visible
+
+    @include r(768px)
+      width: 100%
+
+    @include r(650px)
+      width: calc(100% - 50px)
+      margin-bottom: 20px
+
+  .slider__arrow
+    top: 45px
+    transform: none
+
+    @include r(1000px)
+      top: 60px
+
+    &--prev
+      transform: rotate(-180deg)
+
+      @include r(650px)
+        left: -20px
+
+    &--next
+      @include r(1200px)
+        right: -60px
+
+      @include r(768px)
+        right: 0
+
+      @include r(650px)
+        right: -70px
+
+  &__item
+    display: block
+
+    &:hover .knowledge__desc
+      color: $blue
+
+  &__img
+    height: 165px
+    border-radius: 10px
+    background-color: $dgrey
+    margin-bottom: 15px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+    @include r(768px)
+      height: 145px
+
+  &__desc
+    font-weight: 600
+    padding: 0 8px
+    margin-bottom: 10px
+    transition: color 0.3s
+
+    @include r(768px)
+      font-size: 14px
+
+  &__wrapper
+    display: flex
+    align-items: center
+    padding: 0 8px
+
+  &__date
+    font-family: 'OpenSans', sans-serif
+    font-weight: 400
+    font-size: 14px
+    white-space: nowrap
+    color: #92A2B2
+    margin-right: auto
+
+    @include r(650px)
+      font-size: 12px
+
+  &__comments,
+  &__likes
+    position: relative
+    font-family: 'OpenSans', sans-serif
+    font-weight: 600
+    font-size: 12px
+    line-height: 1
+    padding-left: 30px
+    color: #A2A8BB
+    margin-right: 20px
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 30%
+      transform: translateY(-50%)
+      width: 20px
+      height: 17px
+      background-image: url(../img/comment.svg)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+
+  &__likes
+    margin-right: 0
+    padding-left: 23px
+
+    &::before
+      width: 16px
+      height: 15px
+      background-image: url(../img/like.svg)
+
+.examples
+  display: flex
+  margin-bottom: 145px
+
+  @include r(1200px)
+    flex-direction: column
+    margin-bottom: 70px
+
+  @include r(768px)
+    margin-bottom: 50px
+
+  @include r(650px)
+    margin-bottom: 35px
+
+  &__item
+    position: relative
+    display: flex
+    width: 50%
+    padding: 95px 60px 65px
+    background-image: radial-gradient(48.43% 103.37% at 0% 104.44%, #E0F8FF 0%, #EFF4FF 100%)
+
+    @include r(1200px)
+      width: 100%
+      padding: 80px 20px
+
+    @include r(768px)
+      padding-left: 0
+
+    @include r(650px)
+      padding-left: 20px
+      padding-bottom: 100px
+      padding-top: 0
+
+    &--violent
+      background-image: none
+      background-color: $violent
+      color: white
+
+      @include r(650px)
+        padding-bottom: 60px
+        z-index: 2
+
+    &--left
+      z-index: 2
+
+    &--right
+      .examples__wrapper
+        margin-left: 0
+        margin-right: auto
+
+        @include r(1200px)
+          margin: 0 auto
+
+  &__wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: auto
+
+    @include r(1200px)
+      margin: 0 auto
+      transform: none !important
+
+    @include r(650px)
+      flex-direction: column
+      max-width: 100%
+
+  &__img
+    margin-right: 40px
+
+    @include r(768px)
+      margin-left: -40px
+
+    @include r(650px)
+      margin: -50px 0 -2px
+      height: 300px
+      max-width: 100%
+      overflow: hidden
+
+  &__type
+    max-width: 100%
+    margin-bottom: 40px
+
+    @include r(768px)
+      margin-bottom: 20px
+
+    @include r(650px)
+      width: 100%
+
+  &__title
+    font-size: 32px
+    font-weight: 700
+    margin-bottom: 40px
+    max-width: 550px
+
+    @include r(768px)
+      font-size: 24px
+      margin-bottom: 15px
+
+    @include r(650px)
+      font-size: 20px
+
+    span
+      font-weight: 400
+
+  &__desc
+    max-width: 500px
+    font-family: 'OpenSans', sans-serif
+    font-weight: 400
+    margin-bottom: 30px
+
+    @include r(768px)
+      font-size: 14px
+      margin-bottom: 20px
+
+.services
+  margin-bottom: 120px
+
+  @include r (1000px)
+    margin-bottom: 60px
+
+  @include r (650px)
+    margin-bottom: 40px
+
+  .section-title
+    margin-bottom: 80px
+
+    @include r(1000px)
+      margin-bottom: 60px
+
+    @include r(768px)
+      margin-bottom: 50px
+
+    @include r(650px)
+      margin-bottom: 40px
+
+  .container
+    position: relative
+
+  &__more
+    position: absolute
+    top: 0
+    right: 30px
+    white-space: nowrap
+
+    @include r(650px)
+      position: relative
+      top: auto
+      right: auto
+      display: block
+      width: fit-content
+      margin: 0 auto
+
+  &__inner
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+
+    @include r(1200px)
+      grid-template-columns: repeat(2, 1fr)
+
+    @include r(650px)
+      display: block
+      width: calc( 100% + 40px )
+      margin-left: -20px
+      margin-bottom: 30px
+
+  &__wrapper
+    .services__item
+      @include r(1200px)
+        &:nth-child(even)
+          border-right: none
+
+      @include r(650px)
+        &:last-child
+          border-bottom: none
+
+  &__item
+    position: relative
+    padding: 45px 45px 45px 105px
+    border-top: 1px solid $grey
+    border-left: 1px solid $grey
+
+    @include r(768px)
+      padding: 75px 30px 30px
+
+    @include r(650px)
+      padding: 70px 20px 20px
+      border-left: none
+      border-right: none
+
+    &:nth-child(even)
+      @include r(1200px)
+        border-right: 1px solid $grey
+      @include r(650px)
+        border-right: none
+
+    &:nth-last-child(1)
+      border-bottom: 1px solid $grey
+
+    &--br
+      border-right: 1px solid $grey
+
+      @include r(1200px)
+        border-right: none
+
+    &--bb
+      border-bottom: 1px solid $grey
+      @include r(1200px)
+        border-bottom: none
+
+  &__icon
+    position: absolute
+    left: 30px
+    top: 50px
+
+    @include r(768px)
+      top: 20px
+
+  &__title
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 15px
+    max-width: 280px
+
+    @include r(768px)
+      font-size: 18px
+      margin-bottom: 10px
+
+    &--lg
+      font-size: 26px
+
+      @include r (768px)
+        font-size: 18px
+
+  &__text
+    font-family: 'OpenSans', sans-serif
+    font-size: 14px
+    line-height: 1.8
+    font-weight: 400
+    margin-bottom: 15px
+
+    @include r(768px)
+      font-size: 12px
+      margin-bottom: 10px
+
+  &__link
+    position: relative
+    display: inline-block
+    color: $violent
+    padding-right: 30px
+    font-weight: 600
+    margin-top: 15px
+    transition: color 0.3s
+
+    @include r(768px)
+      font-size: 12px
+
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      right: 0
+      width: 15px
+      height: 15px
+      background-image: url(../img/arrow-right--violent.svg)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      transition: background-image 0.3s
+
+    &:hover
+      color: $blue
+
+      &::after
+        background-image: url(../img/arrow-right--blue.svg)
+
+    &:active
+      color: #3B486A
+
+      &::after
+        background-image: url(../img/arrow-right.svg)
+
+  &__list
+    font-family: 'OpenSans', sans-serif
+    font-weight: 600
+    margin-bottom: 25px
+
+    @include r(768px)
+      font-size: 12px
+
+    li
+      position: relative
+      padding-left: 15px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 7px
+        width: 5px
+        height: 5px
+        border-radius: 100%
+        background-color: $main
+
+      &:not(:last-child)
+        margin-bottom: 10px
+
+.about
+  padding: 100px 0
+  background-color: #F1F4FA
+
+  @include r(768px)
+    padding-top: 50px
+    padding-bottom: 70px
+
+  @include r(650px)
+    padding: 40px 0
+
+  .section-title
+    margin-bottom: 90px
+
+    @include r(1000px)
+      margin-bottom: 60px
+
+    @include r(650px)
+      margin-bottom: 40px
+
+  .container
+    position: relative
+
+    @include r(650px)
+      padding: 0
+
+  &__more
+    position: absolute
+    top: 0
+    right: 30px
+
+    @include r(650px)
+      position: relative
+      top: auto
+      right: auto
+      display: block
+      width: fit-content
+      margin: 0 auto
+
+  &__inner
+    display: flex
+
+    @include r(1000px)
+      flex-direction: column
+
+    @include r(650px)
+      margin-bottom: 25px
+
+  &__item
+    width: 50%
+    border: 1px solid $grey
+    padding: 50px 40px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    @include r(1000px)
+      width: 100%
+
+    @include r(650px)
+      padding: 20px 20px 30px
+      border-left: none
+      border-right: none
+
+    &:last-child
+      border-left: none
+
+      @include r(1000px)
+        border-left: 1px solid $grey
+        border-top: none
+
+    &--no-img
+      padding: 70px 40px
+
+      @include r(650px)
+        padding: 20px 20px 30px
+
+  &__photos
+    display: flex
+    align-items: center
+    flex-direction: row-reverse
+    margin-bottom: 40px
+
+    @include r(650px)
+      margin-bottom: 20px
+
+    li
+      border: 5px solid $lgrey
+      width: 80px
+      height: 80px
+      border-radius: 100%
+      overflow: hidden
+
+      &:not(:last-child)
+        margin-left: -20px
+
+      @include r(650px)
+        width: 55px
+        height: 55px
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__title
+    font-size: 22px
+    font-weight: 700
+    margin-bottom: 30px
+
+    @include r(768px)
+      font-size: 18px
+
+    @include r(650px)
+      width: 100%
+      margin-bottom: 20px
+
+  &__slogan
+    font-size: 20px
+    margin-bottom: 30px
+    font-weight: 400
+    max-width: 550px
+
+    @include r(768px)
+      font-size: 14px
+
+    @include r(650px)
+      margin-bottom: 20px
+
+  &__text
+    font-weight: 400
+    line-height: 1.8
+    max-width: 550px
+
+    @include r(768px)
+      font-size: 14px
+
+  &__list
+    li
+      position: relative
+      padding-left: 15px
+
+      @include r(768px)
+        font-size: 14px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 7px
+        width: 5px
+        height: 5px
+        border-radius: 100%
+        background-color: $main
+
+        @include r(768px)
+          top: 5px
+
+      &:not(:last-child)
+        margin-bottom: 15px
+
+    a
+      position: relative
+      display: inline-block
+
+      &:hover
+        color: $blue
+        text-decoration: underline

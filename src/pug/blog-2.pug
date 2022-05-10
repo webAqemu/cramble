@@ -1,0 +1,72 @@
+include base/_head
+  include blocks/_header
+  main.main
+    // blocks here
+    .blog
+      .container
+        include ./blocks/_sidebar
+        +breadcrumbs(['Главная', 'База знаний', 'Статьи'], 'Название статьи')
+        h1.blog__title Услуги
+        section.services 
+          ul.services__inner
+              li.services__item 
+                  img.services__icon(src="./img/services-icon-1.svg", alt="services icon")
+                  .services__title.services__title--lg Консультирование по запуску
+                  p.services__text Подбор оптимального решения задачи Понимание объёма работ и затрат Техническое задание для разработчиков.
+                  a.services__link(href="#") Подробнее 
+              li.services__item 
+                  img.services__icon(src="./img/services-icon-2.svg", alt="services icon")
+                  .services__title.services__title--lg Создание пилотного продукта
+                  p.services__text Разработаем MVP (минимально рабочий продукт) для вашего проекта в короткие сроки.
+                  a.services__link(href="#") Подробнее 
+              li.services__item.services__item--br
+                  img.services__icon(src="./img/services-icon-3.svg", alt="services icon")
+                  .services__title.services__title--lg Разработка и поддержка проекта
+                  p.services__text Долгосрочное сотрудничество, разработка и развитие проекта, техподдержка, решение проблем
+                  a.services__link(href="#") Подробнее 
+              li.services__item.services__item--bb
+                  img.services__icon(src="./img/services-icon-4.svg", alt="services icon")
+                  .services__title Подрядные работы для веб-проектов
+                  p.services__text Создадим подробную структуру будущего проекта. Изучим отрасль, аудиторию,  решения на рынке. Разработаем визуальное оформление, напишем тексты, сверстаем.
+                  ul.services__list
+                      li Прототипирование 
+                      li Дизайн
+                      li Копирайтинг
+                      li Вёрстка
+                  a.services__link(href="#") Подробнее 
+              li.services__wrapper
+                  .services__item
+                      img.services__icon(src="./img/services-icon-3.svg", alt="services icon")
+                      .services__title Аудит кода текущего проекта
+                      p.services__text Определение степени готовности проекта, качества работ. Выявление проблем.
+                      a.services__link(href="#") Подробнее 
+                  .services__item.services__item--bb
+                      img.services__icon(src="./img/services-icon-6.svg", alt="services icon")
+                      .services__title Поиск специалистов
+                      p.services__text Поиск специалистов для ваших IT задач. Оценка компетенций.
+                      a.services__link(href="#") Подробнее 
+              li.services__item.services__item--br.service__item--bb
+                  img.services__icon(src="./img/services-icon-5.svg", alt="services icon")
+                  .services__title Юридические аспекты для IT решений
+                  p.services__text Пользовательские соглашения. Актуальное законодательство. Отказ от обязательств.
+                  a.services__link(href="#") Подробнее
+        .blog__pagination 
+          button.blog__arrow.blog__arrow--prev.blog__arrow--disabled
+          ul.blog__pages 
+            li.active
+              a(href="#") 1
+            li
+              a(href="#") 2
+            li
+              a(href="#") 3
+            li
+              a(href="#") 4
+            li
+              a(href="#") 5
+            li
+              a(href="#") 6      
+          button.blog__arrow.blog__arrow--next     
+
+  
+  include blocks/_footer
+  script(src="js/app.min.js") 

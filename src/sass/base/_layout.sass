@@ -1,0 +1,215 @@
+@import fonts
+@import vars
+@import reset
+@import mixins
+
+@import '../../../node_modules/swiper/swiper-bundle'
+
+*,
+*::before,
+*::after
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    min-height: 0.001vw // — Fixes Safari bug with viewport units in calc()
+
+html
+    overflow-x: hidden
+
+    &.active
+        overflow: hidden
+
+body
+    font-family: 'Raleway', sans-serif
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.2
+    color: #3B486A
+    overflow-x: hidden
+    background-color: #fff
+
+.container
+    max-width: 1440px
+    padding: 0 30px
+    margin: 0 auto
+
+    @include r(650px)
+        padding: 0 20px
+
+.btn
+    position: relative
+    color: $main
+    display: inline-block
+    padding: 25px 60px 22px 22px
+    border: 1px solid $grey
+    border-radius: 5px
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s
+
+    @include r(768px)
+        font-size: 12px
+        padding: 15px 40px 15px 15px
+
+    &::after
+        content: ""
+        position: absolute
+        right: 30px
+        top: 50%
+        transform: translateY(-50%)
+        width: 15px
+        height: 15px
+        background-image: url(../img/arrow-right.svg)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        transition: background-image 0.3s
+
+        @include r(768px)
+            right: 15px
+            width: 12px
+            height: 12px
+
+    &:hover
+        color: $blue
+        background-color: $lgrey
+        border-color: $lgrey
+
+        &::after
+            background-image: url(../img/arrow-right--blue.svg)
+
+    &:active
+        color: inherit
+        background-color: #D8DBE5
+        border-color: #D8DBE5
+
+        &::after
+            background-image: url(../img/arrow-right.svg)
+
+    &--white
+        border-color: white
+        color: white
+
+        &::after
+            background-image: url(../img/arrow-right--white.svg)
+
+        &:active::after
+            background-image: url(../img/arrow-right--white.svg)
+
+.section-title
+    font-size: 30px
+    font-weight: 700
+    margin-bottom: 45px
+    padding-top: 20px
+
+    @include r(768px)
+        padding-top: 10px
+        font-size: 24px
+
+    @include r(650px)
+        padding-top: 0
+        font-size: 18px
+        text-align: center
+        margin-bottom: 20px
+
+.swiper-wrapper
+    width: fit-content
+
+.slider__arrow
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 2
+    width: 75px
+    height: 75px
+    border-radius: 100%
+    box-shadow: 0px 0px 20px rgba(122, 129, 145, 0.25)
+    background-color: #fff
+    cursor: pointer
+    transition: opacity 0.3s
+
+    @include r(1000px)
+        width: 50px
+        height: 50px
+
+    &::after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 15px
+        height: 15px
+        border-right: 1px solid $main
+        border-bottom: 1px solid $main
+        transform: translate(-65%, -50%) rotate(-45deg)
+        transition: border-color 0.3s
+
+        @include r(1000px)
+            width: 10px
+            height: 10px
+
+    &:hover::after
+        border-color: $red
+
+    &--disabled
+        opacity: 0
+        pointer-events: none
+
+    &--prev
+        right: auto
+        left: 0
+        transform: translateY(-50%) rotate(180deg)
+
+.max-1200
+    display: none !important
+
+    @include r(1200px)
+        display: block !important
+
+.max-768
+    display: none !important
+
+    @include r(768px)
+        display: block !important
+
+    &--flex
+        @include r(768px)
+            display: flex !important
+
+.max-650
+    display: none !important
+
+    @include r(650px)
+        display: block !important
+
+.breadcrumbs
+    display: flex
+    flex-wrap: wrap
+    font-family: 'OpenSans', sans-serif
+    font-weight: 400
+    font-size: 12px
+    line-height: 2
+    color: #A2A8BB
+
+    @include r(650px)
+        font-size: 10px
+
+    &__item:not(:last-child)
+        position: relative
+        padding-right: 15px
+
+        &::after
+            content: '/'
+            font: inherit
+            position: absolute
+            right: 5px
+            top: 0
+
+    &__link
+        white-space: nowrap
+        transition: color 0.3s
+
+        &:hover
+            color: $blue
+
+    &__text
+        cursor: default

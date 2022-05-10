@@ -1,0 +1,238 @@
+.popup
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  box-shadow: 0px 0px 50px rgba(49, 52, 61, 0.1)
+  border-radius: 5px
+  background-color: #fff
+  overflow: hidden
+  max-width: 370px
+  width: 100%
+  padding: 45px 50px 50px
+  opacity: 0
+  pointer-events: none
+  transition: opacity 0.5s
+
+  &.active
+    opacity: 1
+    pointer-events: inherit
+
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    width: 40px
+    height: 40px
+    background-color: #F6F7FA
+
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 12px
+      height: 2px
+      border-radius: 2px
+      background-color: #BEC0CF
+
+    &::before
+      transform: translate(-50%, -50%) rotate(-45deg)
+
+    &::after
+      transform: translate(-50%, -50%) rotate(45deg)
+
+  &__title
+    font-size: 24px
+    font-weight: 700
+    text-align: center
+    margin-bottom: 20px
+
+  &__social
+    display: flex
+    justify-content: center
+    margin-bottom: 25px
+
+    li:not(:last-child)
+      margin-right: 5px
+
+    a
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      border-radius: 5px
+      background-color: #F6F7FA
+
+      svg path
+        fill: #B0B5D1
+        transition: fill 0.3s
+
+      &:hover svg path
+        fill: $blue
+
+  &__or
+    font-family: 'OpanSans', sans-serif
+    font-size: 14px
+    font-weight: 600
+    text-align: center
+    color: #31343D
+    margin-bottom: 20px
+
+  &__form
+    margin-bottom: 5px
+    width: 100%
+
+  &__input
+    .msg
+      display: none
+
+    input
+      font-family: 'OpenSans', sans-serif
+      font-size: 14px
+      padding: 8px 15px
+      width: 100%
+      text-align: center
+      border: none
+      border-bottom: 1px solid $grey
+      margin-bottom: 20px
+      outline: none
+
+      &:placeholder
+        color: $grey
+
+    &.error
+      position: relative
+      .msg
+        position: absolute
+        left: 0
+        bottom: 5px
+        width: 100%
+        display: block
+        font-family: 'Montserrat'
+        font-weight: 500
+        font-size: 10px
+        text-align: center
+        color: $red
+
+      input
+        background-color: rgba(255, 228, 227, 0.5)
+        border-color: $red
+        color: $red
+
+    &.success
+      position: relative
+
+      &::after
+        content: ""
+        position: absolute
+        top: 15px
+        right: 10px
+        width: 10px
+        height: 8px
+        background-image: url(../img/done--green.svg)
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+
+      input
+        background-color: #ECF8F3
+
+  &__btn
+    width: 100%
+    padding: 18px 20px 15px
+    background-color: $blue
+    color: white
+    font-size: 12px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    border-radius: 5px
+    transition: background-color 0.3s
+
+    &:hover
+      background-color: $dblue
+
+  &__checkbox
+    position: relative
+    margin-bottom: 15px
+
+    input
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      z-index: 2
+      opacity: 0
+      cursor: pointer
+
+    label
+      font-family: 'Montserrat'
+      display: block
+      font-size: 10px
+      font-weight: 500
+      color: #798196
+      padding-left: 35px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 5px
+        top: 0
+        width: 20px
+        height: 20px
+        border-radius: 5px
+        background-color: $blue
+
+      &::after
+        content: ""
+        position: absolute
+        left: 5px
+        top: 0
+        width: 20px
+        height: 20px
+        background-image: url(../img/done.svg)
+        background-size: 50%
+        background-position: center
+        background-repeat: no-repeat
+        opacity: 0
+        transition: opacity 0.3s
+
+    input:checked + label::after
+      opacity: 1
+
+  &__link
+    position: relative
+    font-family: 'Montserrat'
+    font-size: 14px
+    font-weight: 500
+    text-align: center
+    color: $blue
+    text-decoration: underline
+    padding-right: 20px
+    display: block
+    width: fit-content
+    margin: 0 auto
+    transition: color 0.3s
+
+    &:hover
+      color: $dblue
+
+    & + &
+      margin-top: 5px
+
+    &::after
+      content: ""
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 11px
+      height: 10px
+      background-image: url(../img/arrow-right--blue.svg)
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center

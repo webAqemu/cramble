@@ -1,0 +1,104 @@
+include base/_head
+  include blocks/_header
+  main.main
+    // blocks here
+    .blog
+      .container
+        include ./blocks/_sidebar
+        +breadcrumbs(['Главная', 'База знаний', 'Статьи'], 'Название статьи')
+        h1.blog__title Облачные виджеты
+        ul.blog__list
+          li.blog__item.blog__item--lg 
+            a.blog__link(href="#")
+              .blog__img(style="background-image:url(https://images.unsplash.com/photo-1652116777291-05558be5f99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80)")
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+          li.blog__item 
+            a.blog__link(href="#")
+              .blog__img
+              p.blog__desc Сколько стоит запустить IT стартап: деньги и время
+              .blog__wrapper 
+                .blog__date 13.03.2022
+                .blog__comments 5 
+                .blog__likes 0
+
+        .blog__pagination 
+          button.blog__arrow.blog__arrow--prev.blog__arrow--disabled
+          ul.blog__pages 
+            li.active
+              a(href="#") 1
+            li
+              a(href="#") 2
+            li
+              a(href="#") 3
+            li
+              a(href="#") 4
+            li
+              a(href="#") 5
+            li
+              a(href="#") 6      
+          button.blog__arrow.blog__arrow--next     
+
+    include ./blocks/_login-popup
+  
+  include blocks/_footer
+  script(src="js/app.min.js") 
