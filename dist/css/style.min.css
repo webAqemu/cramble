@@ -1345,6 +1345,7 @@ body {
   border-top: none;
   opacity: 0;
   pointer-events: none;
+  background-color: #fff;
   transition: opacity 0.3s;
 }
 .header__options.active {
