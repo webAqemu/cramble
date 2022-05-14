@@ -1,0 +1,593 @@
+.article
+  &__background
+    height: 500px
+
+    @include r(960px)
+      height: 350px
+
+    .container
+      position: relative
+      height: 100%
+
+    img
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 0
+      width: calc(100% + 160px)
+
+      @include r(960px)
+        width: calc(100% + 80px)
+
+  .sidebar
+    @include r(960px)
+      position: relative
+      left: auto
+      right: auto
+      top: auto
+      height: auto
+      min-width: 100%
+      padding: 15px 30px 0
+      margin: 0 0 0 -30px
+      overflow: visible
+
+    &.active
+      @include r(960px)
+        .sidebar__categories
+          transform: translateX(0)
+
+      &::after
+        opacity: 0
+        @include r(960px)
+          opacity: 0
+
+    &__categories
+      @include r(960px)
+        position: absolute
+        left: 0
+        top: 0
+        padding-top: 85px
+        background-color: #fff
+        padding-left: 30px
+        height: fit-content
+        overflow-y: auto
+        transform: translateX(-100%)
+        padding-bottom: 40px
+        transition: transform 0.3s
+
+    &__menu
+      display: none !important
+
+  &__inner
+    position: relative
+    padding-left: 90px
+
+    @include r(960px)
+      padding-left: 0
+
+  &__body
+    padding-top: 15px
+    max-width: 960px
+    width: 100%
+    padding-bottom: 60px
+
+    @include r(1400px)
+      max-width: 100%
+
+    @include r(650px)
+      padding-bottom: 20px
+
+  &__stats
+    display: flex
+    align-items: center
+    margin: 30px 0
+
+    .date
+      font-family: 'OpenSans', sans-serif
+      font-weight: 400
+      font-size: 14px
+      white-space: nowrap
+      color: #92A2B2
+      margin-right: 40px
+
+      @include r(650px)
+        font-size: 12px
+
+    .comments,
+    .likes
+      position: relative
+      font-family: 'OpenSans', sans-serif
+      font-weight: 600
+      font-size: 12px
+      line-height: 1
+      padding-left: 30px
+      color: #A2A8BB
+      margin-right: 20px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 30%
+        transform: translateY(-50%)
+        width: 20px
+        height: 17px
+        background-image: url(../img/comment.svg)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+
+    .likes
+      margin-right: 0
+      padding-left: 23px
+
+      &::before
+        width: 16px
+        height: 15px
+        background-image: url(../img/like.svg)
+
+  &__title
+    font-weight: 700
+    font-size: 36px
+    margin-bottom: 60px
+
+    @include r(768px)
+      font-size: 24px
+      margin-bottom: 40px
+
+    @include r(650px)
+      font-size: 18px
+      margin-bottom: 20px
+
+  &__authors
+    display: flex
+    align-items: flex-start
+    margin-bottom: 50px
+
+    @include r(768px)
+      flex-wrap: wrap
+
+  .author
+    display: flex
+    align-items: center
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @include r(768px)
+        margin-bottom: 10px
+
+    &:last-child
+      margin: 0 auto
+
+      @include r(768px)
+        margin: 0
+
+    &__img
+      width: 70px
+      height: 70px
+      border-radius: 10px
+      background-color: #f1f4fa
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+      margin-right: 15px
+
+      @include r(960px)
+        width: 60px
+        height: 60px
+
+      @include r(650px)
+        width: 45px
+        height: 45px
+
+    &__info
+      margin-right: 15px
+
+    &__type
+      font-weight: 400
+      margin-bottom: 5px
+
+      @include r(768px)
+        font-size: 14px
+
+      @include r(650px)
+        font-size: 12px
+
+    &__name
+      font-weight: 700
+      font-size: 18px
+
+      @include r(768px)
+        font-size: 14px
+
+      @include r(650px)
+        font-size: 12px
+
+    &__social
+      display: flex
+
+      li:not(:last-child)
+        margin-right: 5px
+
+      a
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 36px
+        height: 36px
+        border-radius: 5px
+        background-color: #f6f7fa
+
+        @include r(650px)
+          width: 30px
+          height: 30px
+
+        svg path
+          fill: $grey
+
+  &__subtitle
+    font-size: 30px
+    font-weight: 600
+    margin-bottom: 15px
+
+    @include r(960px)
+      font-size: 24px
+
+    @include r(650px)
+      font-size: 16px
+
+  &__text
+    font-family: 'OpenSans', sans-serif
+    margin-bottom: 20px
+    line-height: 2
+
+    @include r(650px)
+      font-size: 12px
+
+  &__imgs
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+    .article__img
+      width: calc(50% - 5px)
+
+      @include r(768px)
+        margin: 0
+
+      @include r(650px)
+        height: 320px
+        width: 100%
+
+        &:not(:last-child)
+          margin-bottom: 5px
+
+    @include r(768px)
+      margin: 0 -30px 40px
+      width: calc(100% + 60px)
+
+      @include r(650px)
+        flex-direction: column
+
+  &__img
+    position: relative
+    height: 480px
+    margin-bottom: 40px
+
+    @include r(768px)
+      height: 380px
+      margin: 0 -30px 40px
+      width: calc(100% + 60px)
+
+    @include r(650px)
+      height: 160px
+
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.05)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__tags
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 30px
+
+    li
+      font-family: 'OpenSans', sans-serif
+      font-size: 10px
+      font-weight: 600
+      text-transform: uppercase
+      color: $dgrey
+      padding: 10px 15px
+      border: 1px solid $grey
+      border-radius: 5px
+
+      &:not(:last-child)
+        margin-right: 5px
+        margin-bottom: 5px
+
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    @include r(650px)
+      flex-wrap: wrap
+
+  &__social
+    display: flex
+    margin-right: auto
+
+    @include r(650px)
+      width: 100%
+      margin-bottom: 15px
+
+    li:not(:last-child)
+      margin-right: 10px
+
+    li.active a
+      background-color: $blue
+
+      svg path
+        fill: white
+
+    a
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 36px
+      height: 36px
+      border-radius: 5px
+      background-color: $lgrey
+      transition: background-color 0.3s
+
+      svg path
+        fill: $grey
+        transition: fill 0.3s, stroke 0.3s
+
+      &:hover
+        background-color: $blue
+
+        svg path
+          fill: white
+
+      &.stroked-svg
+        svg path
+          fill: none
+
+        &:hover svg path
+          stroke: white
+
+  &__discuss
+    position: relative
+    font-size: 14px
+    font-weight: 700
+    color: $blue
+    padding-left: 35px
+    margin-right: 60px
+
+    @include r(960px)
+      margin-right: 25px
+      margin-bottom: 10px
+
+    &::before
+      content: ""
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      width: 24px
+      height: 19px
+      background-image: url(../img/discuss.svg)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+
+  &__likes
+    display: flex
+    align-items: center
+
+    ul
+      display: flex
+      flex-direction: row-reverse
+      margin-right: 20px
+
+      li:not(:last-child)
+        margin-left: -10px
+
+      img
+        width: 35px
+        height: 35px
+        border-radius: 100%
+        object-fit: cover
+        object-position: center
+        border: 3px solid #fff
+
+    .num
+      position: relative
+      font-family: 'OpenSans', sans-serif
+      font-weight: 600
+      padding-left: 25px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 18px
+        height: 17px
+        background-image: url(../img/like.svg)
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+
+  &__heading
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 15px
+
+    @include r(650px)
+      font-size: 18px
+
+  &__headings
+    position: absolute
+    top: 135px
+    left: calc((100% - 1440px) / 2 + 1060px)
+    max-width: 415px
+    width: 100%
+
+    @include r(1400px)
+      position: static
+      max-width: calc(100% + 60px)
+      width: calc(100% + 60px)
+      padding: 20px 30px 40px
+      border-top: 1px solid $grey
+      border-bottom: 1px solid $grey
+      margin-left: -30px
+      margin-bottom: 30px
+
+    ul
+      margin-left: -5px
+
+    li
+      position: relative
+
+      &::before
+        content: ""
+        position: absolute
+        left: 10px
+        top: 15px
+        width: 5px
+        height: 5px
+        border-radius: 100%
+        background-color: $main
+
+      &.active a
+        background-color: #f1f4fa
+        font-weight: 700
+
+    a
+      display: block
+      width: fit-content
+      padding: 10px 20px 10px 25px
+      font-size: 14px
+      border-radius: 10px
+      background-color: #fff
+      font-weight: 400
+      transition: background-color 0.3s, font-weight 0.3s
+
+      @include r(650px)
+        font-size: 12px
+
+      &:hover
+        background-color: #f1f4fa
+        font-weight: 700
+
+  .more
+    padding: 50px 0
+    border-top: 1px solid $grey
+    border-bottom: 1px solid $grey
+
+    @include r(650px)
+      padding: 20px 0 30px
+
+    &__title
+      font-size: 24px
+      font-weight: 700
+      margin-bottom: 45px
+
+      @include r(650px)
+        font-size: 18px
+        margin-bottom: 15px
+
+    &__item:not(:last-child)
+      margin-bottom: 10px
+
+      @include r(650px)
+        margin-bottom: 20px
+
+    &__link
+      display: flex
+      align-items: center
+
+      &:hover .more__desc
+        color: $blue
+
+    &__img
+      min-width: 90px
+      width: 90px
+      height: 65px
+      border-radius: 5px
+      background-color: $dgrey
+      margin-right: 20px
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+
+    &__desc
+      font-weight: 600
+      margin-bottom: 5px
+      transition: color 0.3s
+
+      @include r(650px)
+        font-size: 14px
+        margin-bottom: 10px
+
+    &__stats
+      display: flex
+
+      .date
+        font-family: 'OpenSans', sans-serif
+        font-weight: 400
+        font-size: 14px
+        white-space: nowrap
+        color: #92A2B2
+        margin-right: 40px
+
+        @include r(650px)
+          font-size: 12px
+          margin-right: 20px
+
+      .comments,
+      .likes
+        position: relative
+        font-family: 'OpenSans', sans-serif
+        font-weight: 600
+        font-size: 12px
+        line-height: 1
+        padding-left: 30px
+        color: #A2A8BB
+        margin-right: 20px
+
+        &::before
+          content: ""
+          position: absolute
+          left: 0
+          top: 30%
+          transform: translateY(-50%)
+          width: 20px
+          height: 17px
+          background-image: url(../img/comment.svg)
+          background-size: contain
+          background-position: center
+          background-repeat: no-repeat
+
+      .likes
+        margin-right: 0
+        padding-left: 23px
+
+        &::before
+          width: 16px
+          height: 15px
+          background-image: url(../img/like.svg)

@@ -1,0 +1,186 @@
+include base/_head
+  include blocks/_header
+  main.main
+    // blocks here  
+    .article 
+      .article__background(style="background-color: #0070F0")
+        .container
+          img(src="./img/article-bg.svg", alt="article preview")
+      .article__inner
+        .container
+          .article__body
+            +breadcrumbs(['Главная', 'База знаний', 'Статьи'], 'Название статьи')
+            include ./blocks/_sidebar
+            .article__stats 
+              .date 17.05.21
+              .comments 5
+              .likes 0
+            h1.article__title Как выбрать пластиковое окно, чтобы пережить холодную российскую зиму: 10 правил
+            .article__authors 
+              .author 
+                .author__img(style="background-image: utrl(./img/about-1.jpg)")
+                .author__info
+                  .author__type Дизайнер проекта:
+                  .author__name Руслан Сайдашев
+                ul.author__social
+                  li
+                    a(href="#") 
+                      include ../img/telegram.svg
+                  li
+                    a(href="#") 
+                      include ../img/vk.svg
+              .author 
+                .author__img
+                .author__info
+                  .author__type Дизайнер проекта:
+                  .author__name Руслан Сайдашев
+                ul.author__social
+                  li
+                    a(href="#") 
+                      include ../img/telegram.svg
+                  li
+                    a(href="#") 
+                      include ../img/vk.svg
+            .article__headings 
+              .article__heading Оглавление
+              ul
+                li.active
+                  a(href="#") Определяем бюджет покупки
+                li
+                  a(href="#") Определяемся со способом крепления унитаза
+                li
+                  a(href="#") Выбираем чашу унитаза
+                li
+                  a(href="#") Системы смыва в унитазах
+                li
+                  a(href="#") Как выбрать унитаз без брызг
+                li
+                  a(href="#") Как определить, какой нужен канализационный выпуск?
+                li
+                  a(href="#") Выбираем материал изготовления
+            .article__subtitle Определяем бюджет покупки
+            .article__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+            .article__imgs 
+              .article__img 
+                img(src="./img/article-1.jpg", alt="")
+              .article__img 
+                img(src="./img/article-1.jpg", alt="")
+            .article__subtitle Определяем бюджет покупки
+            .article__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+            .article__img 
+              img(src="./img/article-1.jpg", alt="")
+            .article__subtitle Определяем бюджет покупки
+            .article__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus 
+            ul.article__tags
+              li Покупки
+              li безопасность
+              li сервисы
+              li Покупки
+            .article__bottom 
+              ul.article__social 
+                li.active
+                  a(href="#") 
+                    include ../img/share.svg
+                li
+                  a(href="#") 
+                    include ../img/telegram.svg
+                li
+                  a(href="#") 
+                    include ../img/vk.svg
+                li
+                  a(href="#") 
+                    include ../img/ok.svg
+                li
+                  a(href="#") 
+                    include ../img/pinterest.svg
+                li
+                  a.stroked-svg(href="#") 
+                    include ../img/code.svg
+
+              button.article__discuss Обсудить
+              .article__likes
+                ul 
+                  li 
+                    img(src="./img/about-1.jpg", alt="liked")
+                  li 
+                    img(src="./img/about-2.jpg", alt="liked")
+                  li 
+                    img(src="./img/about-3.jpg", alt="liked")
+                button.num 43
+        .more
+          .container
+            .more__title Читайте также
+            ul.more__list 
+              li.more__item
+                a.more__link(href="#")
+                  .more__img(style="background-image: url(https://images.unsplash.com/photo-1648737154448-ccf0cafae1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)")
+                  .more__info 
+                    .more__desc Сколько стоит запустить IT стартап: деньги и время на разработку
+                    .more__stats 
+                      .date 13.03.2022
+                      .comments 5
+                      .likes 0
+              li.more__item
+                a.more__link(href="#")
+                  .more__img
+                  .more__info 
+                    .more__desc От идеи до реализации: этапы разработки проекта
+                    .more__stats 
+                      .date 13.03.2022
+                      .comments 5
+                      .likes 0
+              li.more__item
+                a.more__link(href="#")
+                  .more__img
+                  .more__info 
+                    .more__desc Идеи IT стартапов
+                    .more__stats 
+                      .date 13.03.2022
+                      .comments 5
+                      .likes 0
+        .contacts   
+          .container
+            h3.contacts__title Есть вопрос или предложение?
+            .contacts__inner.contacts__inner--reversed
+              .contacts__social 
+                ul.contacts__list 
+                  li.contacts__item
+                    a.contacts__link(href="#")
+                      img(src="./img/telegram.svg", alt="social link to telegram")
+                      | Telegram
+                  li.contacts__item
+                    a.contacts__link(href="#")
+                      img(src="./img/vk.svg", alt="social link to vk")
+                      | Вконтакте
+                  li.contacts__item
+                    a.contacts__link(href="#")
+                      img(src="./img/whatsapp.svg", alt="social link to whatsapp")
+                      | WhatsApp
+                  li.contacts__item
+                    a.contacts__link(href="#")
+                      img(src="./img/behance.svg", alt="social link to behance")
+                      | Behance
+                  li.contacts__item
+                    a.contacts__link(href="#")
+                      img(src="./img/skype.svg", alt="social link to skype")
+                      | Skype
+              .contacts__questions 
+                form.contacts__form
+                  .contacts__row 
+                    .contacts__input.contacts__input--theme 
+                      input(type="text" placeholder="Название проекта / статьи")
+                    .contacts__input.contacts__input--name 
+                      input(type="text" placeholder="Имя")
+                    .contacts__input.contacts__input--email 
+                      input(type="email" placeholder="E-mail")
+                  .contacts__row
+                    .contacts__textarea 
+                      <textarea placeholder="Сообщение"></textarea>
+                  .contacts__row 
+                    button.contacts__btn.btn(type="submit") Отправить
+                    .contacts__police Нажимая “Отправить” вы cоглашаетесь #[a(href="#") с политикой конфиденциальности] сайта Crable.ru
+
+
+
+  include blocks/_footer
+  script(src="js/app.min.js") 

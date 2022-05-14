@@ -12,6 +12,28 @@
     @include r(1200px)
       flex-direction: column
 
+    &--reversed
+      flex-direction: row-reverse
+      justify-content: flex-start
+
+      .contacts__social
+        margin-right: auto
+
+        @include r(1200px)
+          margin-bottom: 0
+
+      .contacts__questions
+        margin-right: 30px
+
+        @include r(1200px)
+          margin-bottom: 30px
+
+      .contacts__input--theme input::placeholder
+        color: $main
+
+      @include r(1200px)
+        flex-direction: column-reverse
+
   &__title
     font-size: 26px
     font-weight: 700
@@ -203,7 +225,7 @@
       width: 100%
       font: inherit
       font-size: 14px
-      height: 100px
+      height: 120px
 
       @include r(768px)
         padding: 15px 20px
