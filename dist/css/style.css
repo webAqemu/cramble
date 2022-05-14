@@ -1337,9 +1337,9 @@ body {
 }
 .header__options {
   position: absolute;
-  left: 0;
+  left: -1px;
   top: calc(100% + 1px);
-  width: 100%;
+  width: calc(100% + 2px);
   padding: 30px 35px;
   border: 1px solid #D1D9E0;
   border-top: none;
