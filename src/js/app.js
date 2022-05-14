@@ -109,3 +109,8 @@ if (loginPopup && regPopup) {
     }
   });
 }
+
+// for showing search options
+setTimeout(function (e) {
+  document.querySelector('.header__options.active').classList.remove('active');
+}, 3000);
