@@ -58,6 +58,7 @@ const burger = document.querySelector('.header__burger');
 const search = document.querySelector('.header__search');
 const sidebar = document.querySelector('.sidebar');
 const sidebarBurger = document.querySelector('.sidebar__burger');
+const article = document.querySelector('.article');
 
 if (header && burger && search) {
   header.addEventListener('click', function (e) {
@@ -86,7 +87,7 @@ if (sidebar && sidebarBurger) {
       sidebar.classList.toggle('active');
       sidebarBurger.classList.toggle('active');
 
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 768 && !article) {
         document.documentElement.classList.toggle('active');
       }
     }
