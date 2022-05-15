@@ -3157,6 +3157,20 @@ body {
     overflow: visible;
   }
 }
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 6.78%, rgba(0, 0, 0, 0) 100%);
+}
+@media only screen and (max-width: 768px) {
+  .sidebar::before {
+    display: none;
+  }
+}
 .sidebar::after {
   content: "";
   position: absolute;
@@ -3172,6 +3186,7 @@ body {
 .sidebar.active {
   min-width: 260px;
   width: auto;
+  overflow: visible;
 }
 @media only screen and (max-width: 1200px) {
   .sidebar.active {
@@ -3321,7 +3336,7 @@ body {
   overflow: hidden;
   max-width: 370px;
   width: 100%;
-  padding: 45px 50px 50px;
+  padding: 45px 50px 35px;
   opacity: 0;
   pointer-events: none;
   z-index: 100;
@@ -3348,12 +3363,16 @@ body {
   height: 2px;
   border-radius: 2px;
   background-color: #BEC0CF;
+  transition: background-color 0.3s;
 }
 .popup__close::before {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 .popup__close::after {
   transform: translate(-50%, -50%) rotate(45deg);
+}
+.popup__close:hover::before, .popup__close:hover::after {
+  background-color: #4D74F5;
 }
 .popup__title {
   font-size: 24px;
@@ -3497,7 +3516,8 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background-color: #4D74F5;
+  border: 1px solid #D1D9E0;
+  transition: border-color 0.3s;
 }
 .popup__checkbox label::after {
   content: "";
@@ -3506,15 +3526,20 @@ body {
   top: 0;
   width: 20px;
   height: 20px;
+  background-color: #4D74F5;
   background-image: url(../img/done.svg);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 5px;
   opacity: 0;
   transition: opacity 0.3s;
 }
 .popup__checkbox input:checked + label::after {
   opacity: 1;
+}
+.popup__checkbox input:checked + label::before {
+  border-color: #4D74F5;
 }
 .popup__link {
   position: relative;
@@ -3534,7 +3559,7 @@ body {
   color: #3a5ccc;
 }
 .popup__link + .popup__link {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 .popup__link::after {
   content: "";
@@ -3814,6 +3839,7 @@ body {
   height: 36px;
   border-radius: 5px;
   background-color: #f6f7fa;
+  transition: background-color 0.3s;
 }
 @media only screen and (max-width: 650px) {
   .article .author__social a {
@@ -3823,6 +3849,13 @@ body {
 }
 .article .author__social a svg path {
   fill: #D1D9E0;
+  transition: fill 0.3s;
+}
+.article .author__social a:hover {
+  background-color: #4D74F5;
+}
+.article .author__social a:hover svg path {
+  fill: white;
 }
 .article__subtitle {
   font-size: 30px;
@@ -4004,8 +4037,9 @@ body {
   color: #4D74F5;
   padding-left: 35px;
   margin-right: 60px;
+  transition: color 0.3s;
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 450px) {
   .article__discuss {
     margin-right: 25px;
     margin-bottom: 10px;
@@ -4014,7 +4048,7 @@ body {
 .article__discuss::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   left: 0;
   width: 24px;
@@ -4023,6 +4057,10 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.3s;
+}
+.article__discuss:hover::before {
+  transform: translateY(-50%) translateX(5px);
 }
 .article__likes {
   display: flex;
@@ -4045,23 +4083,19 @@ body {
   border: 3px solid #fff;
 }
 .article__likes .num {
-  position: relative;
   font-family: "OpenSans", sans-serif;
   font-weight: 600;
-  padding-left: 25px;
+  display: flex;
+  align-items: center;
 }
-.article__likes .num::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 17px;
-  background-image: url(../img/like.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.article__likes .num svg {
+  margin-right: 10px;
+}
+.article__likes .num svg path {
+  transition: stroke 0.3s;
+}
+.article__likes .num:hover svg path {
+  stroke: #4D74F5;
 }
 .article__heading {
   font-size: 20px;

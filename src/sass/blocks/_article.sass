@@ -222,6 +222,7 @@
         height: 36px
         border-radius: 5px
         background-color: #f6f7fa
+        transition: background-color 0.3s
 
         @include r(650px)
           width: 30px
@@ -229,6 +230,13 @@
 
         svg path
           fill: $grey
+          transition: fill 0.3s
+
+        &:hover
+          background-color: $blue
+
+          svg path
+            fill: white
 
   &__subtitle
     font-size: 30px
@@ -389,15 +397,16 @@
     color: $blue
     padding-left: 35px
     margin-right: 60px
+    transition: color 0.3s
 
-    @include r(960px)
+    @include r(450px)
       margin-right: 25px
       margin-bottom: 10px
 
     &::before
       content: ""
       position: absolute
-      top: 50%
+      top: 40%
       transform: translateY(-50%)
       left: 0
       width: 24px
@@ -406,6 +415,10 @@
       background-size: contain
       background-position: center
       background-repeat: no-repeat
+      transition: transform 0.3s
+
+    &:hover::before
+      transform: translateY(-50%) translateX(5px)
 
   &__likes
     display: flex
@@ -428,23 +441,19 @@
         border: 3px solid #fff
 
     .num
-      position: relative
       font-family: 'OpenSans', sans-serif
       font-weight: 600
-      padding-left: 25px
+      display: flex
+      align-items: center
 
-      &::before
-        content: ""
-        position: absolute
-        left: 0
-        top: 50%
-        transform: translateY(-50%)
-        width: 18px
-        height: 17px
-        background-image: url(../img/like.svg)
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center
+      svg
+        margin-right: 10px
+
+        path
+          transition: stroke 0.3s
+
+      &:hover svg path
+        stroke: $blue
 
   &__heading
     font-size: 20px
