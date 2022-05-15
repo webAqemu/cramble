@@ -129,12 +129,6 @@
     @include r(768px)
       flex-wrap: wrap
 
-    &:first-child
-      border: 1px solid $grey
-      border-top-right-radius: 5px
-      border-top-left-radius: 5px
-      overflow: hidden
-
     &:last-child
       margin-top: 10px
 
@@ -142,7 +136,7 @@
     &--name::before
       content: ""
       position: absolute
-      left: 0
+      left: 10px
       top: 50%
       transform: translateY(-50%)
       width: 17px
@@ -155,7 +149,7 @@
     &--email::before
       content: ""
       position: absolute
-      left: 0
+      left: 10px
       top: 50%
       transform: translateY(-50%)
       width: 17px
@@ -172,6 +166,7 @@
       border: none
       outline: none
       width: 100%
+      border: 1px solid #fff
 
       @include r(768px)
         padding: 15px 20px
@@ -182,6 +177,12 @@
 
     &--theme
       width: 40%
+      border: 1px solid #fff
+      border-top: 1px solid $grey
+      border-left: 1px solid $grey
+      border-bottom: 1px solid $grey
+      border-top-left-radius: 5px
+      overflow: hidden
 
       @include r(768px)
         width: 100%
@@ -191,6 +192,11 @@
     &--email
       width: 30%
       position: relative
+      border: 1px solid #fff
+      border-bottom: 1px solid $grey
+
+      input
+        padding: 15px 30px 15px 40px
 
       @include r(768px)
         width: 50%
@@ -205,16 +211,33 @@
         width: 100%
 
     &--name
+      border-top: 1px solid $grey
+
       @include r(650px)
         border-bottom: 1px solid $grey
+
+    &--email
+      border-top: 1px solid $grey
+      border-right: 1px solid $grey
+      border-top-right-radius: 5px
+      overflow: hidden
+
+    &.error
+      border-color: $red
+
+      input
+        background-color: #FFE4E3
+
+        &::placeholder
+          color: $red
 
   &__textarea
     display: flex
     width: 100%
     border: 1px solid $grey
+    border-top: none
     border-bottom-right-radius: 5px
     border-bottom-left-radius: 5px
-    border-top: none
     overflow: hidden
 
     textarea
@@ -232,6 +255,29 @@
 
       &:placeholder
         color: $grey
+
+    &.error
+      position: relative
+
+    .error__msg
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 100%
+      background-color: #FFE4E3
+      padding: 10px 25px
+      font-family: 'OpenSans', sans-serif
+      font-size: 12px
+      color: $red
+      display: flex
+      align-items: center
+
+      span
+        font-family: 'Raleway'
+        display: inline-block
+        font-size: 16px
+        font-weight: 700
+        margin-right: 8px
 
   &__btn
     margin-right: 20px
@@ -254,3 +300,39 @@
 
       &:hover
         color: $blue
+
+  &__popup
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 9999
+    max-width: 320px
+    width: 100%
+    box-shadow: 0px 15px 20px rgba(105, 131, 216, 0.15)
+    border-radius: 10px
+    background-color: #fff
+    font-weight: 700
+    padding: 30px 30px 30px 90px
+    opacity: 0
+    pointer-events: none
+    transition: opacity 0.3s
+
+    &.active
+      opacity: 1
+
+    &::before
+      content: ""
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 25px
+      width: 45px
+      height: 45px
+      background-image: url(../img/success.svg)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+
+    &.error::before
+      background-image: url(../img/error.svg)

@@ -28,17 +28,23 @@
         h3.contacts__title Есть вопрос или предложение?
         form.contacts__form
           .contacts__row 
-            .contacts__input.contacts__input--theme 
+            .contacts__input.contacts__input--theme.error
               input(type="text" placeholder="Тема сообщения")
             .contacts__input.contacts__input--name 
               input(type="text" placeholder="Имя")
             .contacts__input.contacts__input--email 
               input(type="email" placeholder="E-mail")
           .contacts__row
-            .contacts__textarea 
+            .contacts__textarea.error
               <textarea placeholder="Сообщение"></textarea>
+              .error__msg
+                span !
+                | Не менее 50 знаков в сообщении
           .contacts__row 
             button.contacts__btn.btn(type="submit") Отправить
             .contacts__police Нажимая “Отправить” вы cоглашаетесь #[a(href="#") с политикой конфиденциальности] сайта Crable.ru
 
-
+      .contacts__popup.success.active
+        p Сообщение отправлено
+      .contacts__popup.error.active
+        p Ошибка отправки

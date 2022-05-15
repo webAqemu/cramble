@@ -117,3 +117,9 @@ if (loginPopup && regPopup) {
 setTimeout(function (e) {
   document.querySelector('.header__options.active').classList.remove('active');
 }, 3000);
+
+setTimeout(function (e) {
+  document.querySelectorAll('.contacts__popup.active').forEach(function (popup) {
+    popup.classList.remove('active');
+  });
+}, 1000);

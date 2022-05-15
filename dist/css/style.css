@@ -2620,19 +2620,13 @@ body {
     flex-wrap: wrap;
   }
 }
-.contacts__row:first-child {
-  border: 1px solid #D1D9E0;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  overflow: hidden;
-}
 .contacts__row:last-child {
   margin-top: 10px;
 }
 .contacts__input--name::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   width: 17px;
@@ -2645,7 +2639,7 @@ body {
 .contacts__input--email::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   width: 17px;
@@ -2662,6 +2656,7 @@ body {
   border: none;
   outline: none;
   width: 100%;
+  border: 1px solid #fff;
 }
 @media only screen and (max-width: 768px) {
   .contacts__input input {
@@ -2674,6 +2669,12 @@ body {
 }
 .contacts__input--theme {
   width: 40%;
+  border: 1px solid #fff;
+  border-top: 1px solid #D1D9E0;
+  border-left: 1px solid #D1D9E0;
+  border-bottom: 1px solid #D1D9E0;
+  border-top-left-radius: 5px;
+  overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
   .contacts__input--theme {
@@ -2684,6 +2685,11 @@ body {
 .contacts__input--name, .contacts__input--email {
   width: 30%;
   position: relative;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #D1D9E0;
+}
+.contacts__input--name input, .contacts__input--email input {
+  padding: 15px 30px 15px 40px;
 }
 @media only screen and (max-width: 768px) {
   .contacts__input--name, .contacts__input--email {
@@ -2701,18 +2707,36 @@ body {
     width: 100%;
   }
 }
+.contacts__input--name {
+  border-top: 1px solid #D1D9E0;
+}
 @media only screen and (max-width: 650px) {
   .contacts__input--name {
     border-bottom: 1px solid #D1D9E0;
   }
 }
+.contacts__input--email {
+  border-top: 1px solid #D1D9E0;
+  border-right: 1px solid #D1D9E0;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+}
+.contacts__input.error {
+  border-color: #FF4343;
+}
+.contacts__input.error input {
+  background-color: #FFE4E3;
+}
+.contacts__input.error input::placeholder {
+  color: #FF4343;
+}
 .contacts__textarea {
   display: flex;
   width: 100%;
   border: 1px solid #D1D9E0;
+  border-top: none;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  border-top: none;
   overflow: hidden;
 }
 .contacts__textarea textarea {
@@ -2732,6 +2756,29 @@ body {
 }
 .contacts__textarea textarea:placeholder {
   color: #D1D9E0;
+}
+.contacts__textarea.error {
+  position: relative;
+}
+.contacts__textarea .error__msg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFE4E3;
+  padding: 10px 25px;
+  font-family: "OpenSans", sans-serif;
+  font-size: 12px;
+  color: #FF4343;
+  display: flex;
+  align-items: center;
+}
+.contacts__textarea .error__msg span {
+  font-family: "Raleway";
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 8px;
 }
 .contacts__btn {
   margin-right: 20px;
@@ -2758,6 +2805,42 @@ body {
 }
 .contacts__police a:hover {
   color: #4D74F5;
+}
+.contacts__popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0px 15px 20px rgba(105, 131, 216, 0.15);
+  border-radius: 10px;
+  background-color: #fff;
+  font-weight: 700;
+  padding: 30px 30px 30px 90px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.contacts__popup.active {
+  opacity: 1;
+}
+.contacts__popup::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 25px;
+  width: 45px;
+  height: 45px;
+  background-image: url(../img/success.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contacts__popup.error::before {
+  background-image: url(../img/error.svg);
 }
 
 .blog {

@@ -284,7 +284,7 @@
               <h3 class="contacts__title">Есть вопрос или предложение?</h3>
               <form class="contacts__form">
                 <div class="contacts__row"> 
-                  <div class="contacts__input contacts__input--theme"> 
+                  <div class="contacts__input contacts__input--theme error">
                     <input type="text" placeholder="Тема сообщения">
                   </div>
                   <div class="contacts__input contacts__input--name"> 
@@ -295,14 +295,21 @@
                   </div>
                 </div>
                 <div class="contacts__row">
-                  <div class="contacts__textarea">
-                     <textarea placeholder="Сообщение"></textarea></div>
+                  <div class="contacts__textarea error"><textarea placeholder="Сообщение"></textarea>
+                    <div class="error__msg"><span>!</span>Не менее 50 знаков в сообщении</div>
+                  </div>
                 </div>
                 <div class="contacts__row"> 
                   <button class="contacts__btn btn" type="submit">Отправить</button>
                   <div class="contacts__police">Нажимая “Отправить” вы cоглашаетесь <a href="#">с политикой конфиденциальности</a> сайта Crable.ru</div>
                 </div>
               </form>
+            </div>
+            <div class="contacts__popup success active">
+              <p>Сообщение отправлено</p>
+            </div>
+            <div class="contacts__popup error active">
+              <p>Ошибка отправки</p>
             </div>
           </div>
         </div>
