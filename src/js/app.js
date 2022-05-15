@@ -71,6 +71,8 @@ if (header && burger && search) {
           document.documentElement.classList.toggle('active');
         } else if (!sidebar) {
           document.documentElement.classList.toggle('active');
+        } else if (sidebar && sidebar.classList.contains('active') && article) {
+          document.documentElement.classList.toggle('active');
         }
       }
     }
